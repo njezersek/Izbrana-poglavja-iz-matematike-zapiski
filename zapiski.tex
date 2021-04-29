@@ -1,7 +1,7 @@
 \input{config.tex}
 \begin{document}
 	\section{Kolobarji polinomov}
-	\subsection{Računanje s kompleksnimi števili}
+	\subsection*{Računanje s kompleksnimi števili}
 	\begin{gather*}
 		z = x + iy = r e^{i\varphi} = r\left( \cos \varphi + i \sin \varphi \right)
 	\end{gather*}
@@ -17,7 +17,7 @@
 	\subsubsection*{Osnovni izrek algebre}
 	Vsak nekonstanten polinom $a_n x^n + \dots + a_0$ ima natanko $n$ kompleksnih ničel (štetih z večkratnostjo).
 
-	\subsubsection*{Trigonometrične identitete}
+	\subsection*{Trigonometrične identitete}
 	\begin{align*}
 		&\sin(x \pm y) = \sin(x) \cos(y) \pm \cos(x) \sin(y) \\
 		&\cos(x \pm y) = \cos(x) \cos(y) \mp \sin(x) \sin(y)\\
@@ -30,8 +30,55 @@
 		&\cos\frac{x}{2} = \pm\sqrt{\frac{1+\cos x}{2}}\\
 	\end{align*}
 
-	\subsubsection*{Mali Fermantov izrek}
+	\subsection*{Mali Fermantov izrek}
 	\begin{align}
 		\forall a \in \mathbb{Z}, p \in \mathbb{P}:\ a^p \equiv_p a
 	\end{align}
+
+	\subsection*{Polinomi}
+	Polinom je \textbf{razcepen}, če ga lahko zapišemo kot produkt dveh nekonstantnih polinomov.
+	Nekonstanten polinom, ki ni razcepen je \textbf{nerazcepen}.
+
+	Polinom $a_n x^n + \dots + a_0$ je \textbf{primitiven}, če velja $\gcd(a_0, \dots, a_n) = 0$
+
+	\subsubsection*{Gaussova lema}
+	\begin{align}
+		p(x) \in \mathbb{Z}[x] \text{ razcepen nad } \mathbb{Z} \iff p(x) \text{ razcepen nad } \mathbb{Q}
+	\end{align}
+
+	\subsubsection*{Hornerjev algoritem}
+	\[a_n x^n + ... + a_0 = 0\]
+	\begin{itemize}
+		\item možne cele ničle: $\pm$delitelji $a_0$
+		\item možne racionalne ničle: $\pm \frac{\text{delitelji }a_0}{\text{delitelji }a_n} = k$
+	\end{itemize}
+	\begin{center}
+		\begin{tabular}{ l|l l l l}
+				& $a_n$ & $a_{n-1}$ & $...$ & $a_0$ \\ \hline
+			$k$ &       & $ka_n$    & $...$ & \\ \hline
+				& $a_n$ & $ka_n - a_{n-1}$ & $...$ & ostanek\\
+		\end{tabular}
+	\end{center}
+
+	\subsubsection*{Eisensteinov kriterij}
+	Naj bo $a(x) = a_n x^n + \dots + a_0 \in \mathbb{Z}[x]$ polinom. Če $\exists p \in \mathbb{P} : p | a_0, \dots, a_{n-1} \wedge p \nmid a_n \wedge p^2 \nmid a_0$, potem je $a(x)$ nerazcepen nad $\mathbb{Q}$.
+
+	\subsubsection*{Rodovne funkcije}
+	\[
+		\begin{aligned}
+			\sum_{n=0}^{\infty} q^n &= \frac{1}{1-q} &
+			\sum_{n=0}^{b} q^n &= \frac{1-q^{b+1}}{1-q}
+			\\
+			\sum_{n=a}^{\infty} q^n &= \frac{q^{a}}{1-q} &
+			\sum_{n=a}^{b} q^n &= \frac{q^a-q^{b+1}}{1-q}
+		\end{aligned}
+	\]
+	\[
+		a^n - b^n = (a-b)(a^{n-1} + a^{n-2}b + ... + ab^{n-2} + b^{n-1})  
+	\]
+	\[ \textstyle \frac{a_0 + ... + a_{k-1}x^{k-1}}{1-x^k} = a_0 + ... + a_{k-1}x^{k-1} + a_0^k + ... + a_{k-1}x^{2k-1} + ...\]
+	\[ (x+y)^n = \sum_{k=0}^{n} \binom{n}{k} x^{n-k}y^{k} \]
+	\[ \frac{1}{(1-x)^n} = \sum_{k=0}^{n} \binom{n+k-1}{k} x^{k} \]
+	\[ B_\lambda(x) = \sum_{n} \binom{\lambda}{n} x^{n} = (1+x)^\lambda; \qquad \binom{\lambda}{n} = \frac{\lambda^{\underline{n}}}{n!}\]
+
 \end{document}
