@@ -57,13 +57,29 @@
 
 	\subsection*{Karakteristika kolobarja}
 	\textbf{Karakteristika} kolobarja $R$ je najmanjši $n\in \mathbb{N}$, tako da velja 
-	\[\underbrace{1+1+...+1}_{n\textmd{-krat}} = 0\]
-	oziroma
-	\[\forall a \in R\ :\ \underbrace{a+a+...+a}_{n\textmd{-krat}} = 0\]
+	\[\forall a \in R\ :\ na = \underbrace{a+a+...+a}_{n\textmd{-krat}} = 0\]
 	Če tak $n$ ne obstaja je karakteristika enaka $0$.
+
+	Če je $1 \in R$, je $\text{char}(R) = \text{red enote}$ oziroma najmanjši $n \in \mathbb{N}$, da je $1\cdot n = 0$. 
 
 	Če je $R$ cel kolobar, je $\textmd{char}R \in \{0\} \cup \mathbb{P}$.
 
+	\subsection*{Homomorfizem}
+	Naj bosta $K$, $L$ kolobarja. $f:K \to L$ je \textbf{homomorfizem}, če $\forall a, b \in K$ velja:
+	\begin{gather*}
+		f(a+b) = f(a) + f(b)\\
+		f(a \cdot b) = f(a) \cdot f(b)
+	\end{gather*}
+
+	\textbf{Izomorfizem} je bijektivni homomorfizem.
+
+	Če je $f(1) = 1$, pravimo, da je homomorfizem \textbf{unitalen}. Če je unitelen in če je $a$ obrnljiv, potem je $f(a^{-1}) = f(a)^{-1}$.
+
+	Zaloga vrednosti $f$ je $f(K) = \{ f(a)\ |\ a \in K\} = \ \text{Im}K \leq L$.
+	\[ f \text{ je surjektiven} \iff \text{Im}f = L\]
+
+	Praslika 0 je $f^{-1}(0) = \{ a \in K \ |\ f(a) = 0\} = \text{Ker}f \leq K$.
+	\[ \forall a \in K, \forall x \in \text{Ker} f:\ f(ax) = f(a)f(x) = 0\]
 
 	\section{Kolobarji polinomov}
 	\subsection*{Računanje s kompleksnimi števili}
