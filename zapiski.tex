@@ -66,20 +66,58 @@
 
 	\subsection*{Homomorfizem}
 	Naj bosta $K$, $L$ kolobarja. $f:K \to L$ je \textbf{homomorfizem}, če $\forall a, b \in K$ velja:
-	\begin{gather*}
-		f(a+b) = f(a) + f(b)\\
-		f(a \cdot b) = f(a) \cdot f(b)
-	\end{gather*}
+	\begin{align*}
+		f(a+b) &= f(a) + f(b) \implies f(0) = 0,\ f(-a) = -f(a)\\
+		f(a \cdot b) &= f(a) \cdot f(b)
+	\end{align*}
 
 	\textbf{Izomorfizem} je bijektivni homomorfizem.
 
+	\textbf{Avtomorfizem} je homomorfizem $f: K \to K$.
+
 	Če je $f(1) = 1$, pravimo, da je homomorfizem \textbf{unitalen}. Če je unitelen in če je $a$ obrnljiv, potem je $f(a^{-1}) = f(a)^{-1}$.
 
+	\subsubsection*{Slika / zaloga vrednosti}
 	Zaloga vrednosti $f$ je $f(K) = \{ f(a)\ |\ a \in K\} = \ \text{Im}K \leq L$.
 	\[ f \text{ je surjektiven} \iff \text{Im}f = L\]
-
+	
+	\subsubsection*{Jedro / ničelna množica}
 	Praslika 0 je $f^{-1}(0) = \{ a \in K \ |\ f(a) = 0\} = \text{Ker}f \leq K$.
-	\[ \forall a \in K, \forall x \in \text{Ker} f:\ f(ax) = f(a)f(x) = 0\]
+	\[ \forall a \in K, \forall x \in \text{Ker} f:\ f(ax) = f(a)f(x) = 0 \implies \text{Ker}f \lhd K\]
+
+	\subsection*{Ideali}
+	Podkolobar $I \leq K$ je ideal, če velja $I\cdot K \subseteq I$ in $K\cdot I \subseteq I$. Oznaka: $I \lhd K$.
+
+	V nekumutativnih kolobarjih ločimo \textbf{leve} in \textbf{desne} kolobarje.
+
+	$K$ in $\{0\}$ sta \textbf{neprava ideala}.
+
+	V osegih obstajajo le nepravi ideali. Še več, pravi ideali ne vsebujejo obrnljivih elementov.
+
+	\subsubsection*{Glavni ideali}
+	Naj bo $K$ kolobar in $x \in K$.
+	\[ (x) = Kx = \{kx\ |\ k \in K\}\]
+
+	Kolobar je \textbf{glavno idealski}, če se vsi njegovi ideali glavni.
+
+	\subsubsection*{Kvocientni ideal}
+	Za dvostranski ideal $I \lhd K$ definiramo ekvivalenčno relacijo $\sim$:
+	\[ \forall a,b \in K:\ a \sim b \iff a-b \in I \]
+	$K$ razdelimo na ekvivalenčne razrede $K/_\sim$, ki pa jih lahko označimo tudi z $K/I$. Ekvivalenčni razred, ki pripada $x \in K$ označimo $[x]$ ali pa $(x+I)$.
+
+	Dodamo opreaciji:
+	\begin{align*}
+		(x+I) + (y + I) = (x+y+I) \\
+		(x+I) \cdot (y + I) = (x\cdot y+I) \\
+	\end{align*}
+	$(K/I, +, \cdot)$ je kolobar in podeduje lastnosti $K$.
+
+	\subsection*{Izrek o izomorfizmu}
+	Naj bo $f: K \to L$ homomorfizem kolobarjev. Potem je $\text{Ker}f \lhd K$ in imamo naravni izomorfizem:
+	\begin{align*}
+		\bar{f}: K/\text{Ker}f \to \text{Im}f\\
+		\bar{f} (x + \text{Ker}f) = f(x)
+	\end{align*}
 
 	\section{Kolobarji polinomov}
 	\subsection*{Računanje s kompleksnimi števili}
