@@ -116,10 +116,11 @@
 	Naj bo $f: K \to L$ homomorfizem kolobarjev. Potem je $\text{Ker}f \lhd K$ in imamo naravni izomorfizem:
 	\begin{align*}
 		\bar{f}: K/\text{Ker}f \to \text{Im}f\\
-		\bar{f} (x + \text{Ker}f) = f(x)
+		\bar{f} (x + \text{Ker}f) = f(x) \\
+		K/\text{Ker}f \cong \text{Im}f
 	\end{align*}
 
-	\section{Kolobarji polinomov}
+	\section*{Kolobarji polinomov}
 	\subsection*{Računanje s kompleksnimi števili}
 	\begin{gather*}
 		z = x + iy = r e^{i\varphi} = r\left( \cos \varphi + i \sin \varphi \right)
@@ -222,4 +223,24 @@
 		\end{aligned}
 	\]
 	\[\sum_{d|n} \varphi(d) = n\]
+
+	\subsubsection*{Največji skupni delitelj}
+	Za polinoma $a,b \in F[x]$ obstaja enolično določen največji skupni delitelj $d = \gcd(a,b)$.
+	\subsubsection*{Razširjen evklidov algoritem}
+\begin{algorithm}
+vhod: $(a, b)$
+($r_0$, $x_0$, $y_0$) = ($a$, 1, 0)
+($r_1$, $x_1$, $y_1$) = ($b$, 0, 1)
+$i$ = 1
+
+dokler $r_i$ $\neq$ 0:
+	$i$ = $i$+1
+	$k_i$ = $r_{i-2} // r_{i-1}$
+	$(r_i, x_i, y_i)$ = $(r_{i-2}, x_{i-2}, y_{i-2}) - k_i(r_{i-1}, x_{i-1}, y_{i-1})$
+konec zanke
+vrni: $(r_{i-1}, x_{i-1}, y_{i-1})$
+\end{algorithm}
+
+	Trojica $(d, x, y)$, ki jo vrne razširjen evklidov algoritem z vhodnim podatkomk $(a, b)$, zadošča:
+	\[ax + by = d \text{ in } d = \textrm{gcd}(a, b)\] 
 \end{document}
