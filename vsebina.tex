@@ -85,7 +85,10 @@ Zaloga vrednosti $f$ je $f(K) = \{ f(a)\ |\ a \in K\} = \ \text{Im}K \leq L$.
 
 \subsubsection*{Jedro / ničelna množica}
 Praslika 0 je $f^{-1}(0) = \{ a \in K \ |\ f(a) = 0\} = \text{Ker}f \leq K$.
-\[ \forall a \in K, \forall x \in \text{Ker} f:\ f(ax) = f(a)f(x) = 0 \implies \text{Ker}f \lhd K\]
+\begin{multline*}
+	\forall a \in K, \forall x \in \text{Ker} f:\ f(ax) = f(a)f(x) = 0 \\
+	\implies \text{Ker}f \lhd K
+\end{multline*}
 
 \subsection*{Ideali}
 Podkolobar $I \leq K$ je ideal, če velja $I\cdot K \subseteq I$ in $K\cdot I \subseteq I$. Oznaka: $I \lhd K$.
@@ -101,7 +104,7 @@ $K$ in $\{0\}$ sta \textbf{neprava ideala}.
 \subsubsection*{Maksimalen ideal}
 Pravi ideal je \textbf{maksimalen}, če vsebuje vse ostale prave ideale.
 
-$R$ obseg, $I \lhd R[x]$ ja maksimalen $\iff$ $I = (p(x))$, $p(x)$ nerazcepen
+$R$ obseg, $I \lhd R[x]$ je maksimalen $\iff$ $I = (p(x))$, $p(x)$ nerazcepen
 
 \subsubsection*{Glavni ideali}
 Naj bo $K$ kolobar in $x \in K$.
@@ -123,8 +126,11 @@ $(K/I, +, \cdot)$ je kolobar in podeduje lastnosti $K$.
 
 $K/I$ ($K$ komutativen kolobar) je \textbf{obseg} $\iff$ $I$ maksimalen ideal.
 
+Funkcija 
+\[f: \{\text{ideali v $K$, ki vsebujejo $I$}\} \leftrightarrow \{\text{ideali v $K/I$}\}\] je bijekcija.
+
 \subsection*{Izrek o izomorfizmu}
-Naj bo $f: K \to L$ homomorfizem kolobarjev. Potem je $\text{Ker}f \lhd K$ in imamo naravni izomorfizem:
+Naj bo $f: K \to L$ homomorfizem kolobarjev (velja tudi za grupe). Potem je $\text{Ker}f \lhd K$ in imamo naravni izomorfizem:
 \begin{align*}
 	\bar{f}: K/\text{Ker}f \to \text{Im}f\\
 	\bar{f} (x + \text{Ker}f) = f(x) \\
