@@ -90,11 +90,18 @@ Praslika 0 je $f^{-1}(0) = \{ a \in K \ |\ f(a) = 0\} = \text{Ker}f \leq K$.
 \subsection*{Ideali}
 Podkolobar $I \leq K$ je ideal, če velja $I\cdot K \subseteq I$ in $K\cdot I \subseteq I$. Oznaka: $I \lhd K$.
 
-V nekumutativnih kolobarjih ločimo \textbf{leve} in \textbf{desne} kolobarje.
+V nekumutativnih kolobarjih ločimo \textbf{leve} in \textbf{desne} ideale.
 
 $K$ in $\{0\}$ sta \textbf{neprava ideala}.
 
-V osegih obstajajo le nepravi ideali. Še več, pravi ideali ne vsebujejo obrnljivih elementov.
+(komutativen) kolobar $K$ je obseg $\iff$ nima pravih idealov. 
+
+Še več, pravi ideali ne vsebujejo obrnljivih elementov.
+
+\subsubsection*{Maksimalen ideal}
+Pravi ideal je \textbf{maksimalen}, če vsebuje vse ostale prave ideale.
+
+$R$ obseg, $I \lhd R[x]$ ja maksimalen $\iff$ $I = (p(x))$, $p(x)$ nerazcepen
 
 \subsubsection*{Glavni ideali}
 Naj bo $K$ kolobar in $x \in K$.
@@ -113,6 +120,8 @@ Dodamo opreaciji:
 	(x+I) \cdot (y + I) = (x\cdot y+I) \\
 \end{align*}
 $(K/I, +, \cdot)$ je kolobar in podeduje lastnosti $K$.
+
+$K/I$ ($K$ komutativen kolobar) je \textbf{obseg} $\iff$ $I$ maksimalen ideal.
 
 \subsection*{Izrek o izomorfizmu}
 Naj bo $f: K \to L$ homomorfizem kolobarjev. Potem je $\text{Ker}f \lhd K$ in imamo naravni izomorfizem:
