@@ -105,8 +105,9 @@ $K$ in $\{0\}$ sta \textbf{neprava ideala}.
 Pravi ideal je \textbf{maksimalen}, če ni vsebovan v nobenem pravem idealu.
 
 \subsubsection*{Glavni ideali}
-Naj bo $K$ kolobar in $x \in K$.
+Naj bo $K$ kolobar in $x,y \in K$.
 \[ (x) = Kx = \{kx\ |\ k \in K\}\]
+\[ (x,y) = (x) + (y) = \{kx + ly\ |\ k,l \in K\}\]
 
 Kolobar je \textbf{glavno idealski}, če se vsi njegovi ideali glavni.
 
@@ -128,6 +129,8 @@ $K/I$ ($K$ komutativen kolobar) je \textbf{obseg} $\iff$ $I$ maksimalen ideal.
 
 Funkcija 
 \[f: \{\text{ideali v $K$, ki vsebujejo $I$}\} \leftrightarrow \{\text{ideali v $K/I$}\}\] je bijekcija.
+
+Ideali v $K/(x)$ so oblike $(d + (x))$, kjer $d | x$. Če je $d$ nerazcepen, je ideal maksimalen.
 
 \subsubsection*{Praideal}
 Ideal $P$ v kolobarju $K$ je \emph{praideal}, če je $P \neq K$ in če $\forall a,b \in K: ab \in P \implies a \in P \vee b \in P$.
@@ -183,9 +186,9 @@ Nekonstanten polinom, ki ni razcepen je \textbf{nerazcepen}.
 Polinom $a_n x^n + \dots + a_0$ je \textbf{primitiven}, če velja $\gcd(a_0, \dots, a_n) = 1$
 
 \subsubsection*{Gaussova lema}
-\begin{align*}
-	p(x) \in \mathbb{Z}[x] \text{ razcepen nad } \mathbb{Z} \iff p(x) \text{ razcepen nad } \mathbb{Q}
-\end{align*}
+\begin{multline*}
+	p(x) \in \mathbb{Z}[x] \text{ razcepen nad } \mathbb{Z} \\ \iff p(x) \text{ razcepen nad } \mathbb{Q}
+\end{multline*}
 
 \subsubsection*{Hornerjev algoritem}
 \[a_n x^n + ... + a_0 = 0\]
