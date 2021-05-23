@@ -280,3 +280,73 @@ Norma Gaussovega celega je $N(a+bi) = a^2 + b^2$.
 Vsak par Gaussovih celih števil $z, w \in \mathbb{Z}[i]$  lahko zapišemo kot
 \[z = kw + r \]
 Kjer je $N(z) > N(w)$ in $N(r) < N(w)$
+
+\pagebreak
+\section*{Obsegi}
+Obseg je \emph{komutativen} kkolobar v katerem so vsi neničelni elementi \emph{obrnljivi}.
+
+\subsection*{Razširitve obsegov}
+Če je $K$ podobseg obsega $F$, pravimo, da je $F$ \textbf{razširitev} obsega $K$ in pišemo $K \leq F$.
+
+$F$ je avtomatično tudi vektorski prostor nad $K$ dimenzije $\dim_K(F) = [F:K]$.
+
+Če je $[F:K]$ končna, je $F$ \textbf{končna razširitev}, sicer pa je \textbf{neskončna razširitev}.
+
+\[ K \leq F \leq E \implies [E:K] = [E:F] \cdot [F:K] \]
+
+\begin{itemize}
+	\item Najmanjši podkolobar kolobarja $F$, ki vsebuje $K \leq F$ in $a \in F$ je
+	\[K[a] = \{p(a)\ |\ p(x) \in K[x]\}\]
+	\item Najmanjši podobseg obsega $F$, ki vsebuje $K \leq F$ in $a \in F$ je
+	\[K(a) = \left\{ \frac{ p(a) }{ q(a) }\ \middle|\ p(x), q(x) \in K[x] \right\} \]
+\end{itemize}
+
+\subsubsection*{Enostavne razširitve obsegov}
+Naj bo $K \leq F$ in $a \in F$. Oglejmo si homomorfizem
+\begin{align*}
+	f_a: K[x] &\to F \\
+		p(x) & \mapsto p(a)
+\end{align*}
+\begin{align*}
+	\text{Im}f_a &= K[a] \\
+	\text{Ker}f_a &= \{ p(x) \in K[x]\ |\ p(a) = 0\}
+\end{align*}
+
+\renewcommand{\labelitemii}{$\iff$}
+\begin{itemize}
+	\item $a$ je \textbf{transcendenten} nad $K$
+	\begin{itemize}
+		\item $a$ ni ničala nobenega neničelnega polinoma iz $K[x]$
+		\item $\text{Ker} f_a = (0)$
+		\item $f_a$ injektivna
+	\end{itemize}
+	\item $a$ je \textbf{algebraičen} nad $K$
+	\begin{itemize}
+		\item $\exists p(x) \in K[x], p \neq 0:\ p(a) = 0$
+	\end{itemize}
+\end{itemize}
+
+Če so vsi elementi $F$ algebraični nad $K$, je $F$ \textbf{algebraična razširitev}. V nasprotnem primeru pa je $F$ \textbf{transcendentna razširitev}.
+
+Če je $a \in F$ \emph{transcendenten} nad $K$, je
+\begin{align*}
+	K[a] \cong  K[x] && K(a) \cong K(x)
+\end{align*}
+
+Če je $a \in F$ \emph{algebraičen} nad $K$, velja:
+\begin{itemize}
+	\item $\exists$ natanko določen \textbf{minimalni polinom} $g_a \in K[x]$, ki deli vse polinome z ničlo v $a$.  $g_a$ \textbf{moničen} (\emph{vodilni koef. =1})
+	\item $\text{Ker}f_a = (g_a)$
+	\item $K(a) = K[a] \cong K[x] / (g_a)$
+	\item $[K(a):K] = \deg g_a$, \textbf{stopnja} $a$ nad $K$ (oznaka: $\deg_K a$)
+	\item Ideal $(g_a) \lhd K[x]$ je maksimalen $\implies$ $K[x] / (g_a)$ je obseg
+\end{itemize}
+
+Naj bo $F$ končna razširitev $K$, potem za vsak $a \in F$ velja 
+\[\deg_K (a) \big| [F:K] \]
+
+Vse transcendentne razširitve so neskončne, algebraične pa so lahko končne ali pa neskončne (če dodamo več elementov).
+
+Naj bo $K \leq F$ in $A \subseteq F$ množica števil, ki so algebraična nad $K$. Potem je $K(A)$ algebraična nad $K$.
+
+Naj bo $K \leq F \leq E$, $F$ algebraična nad $K$, $E$ algebraična nad $F$. Potem je $E$ algebraična nad $K$.
