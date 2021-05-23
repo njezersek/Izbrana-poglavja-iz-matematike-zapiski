@@ -359,3 +359,55 @@ Za vsak $n$ obstaja razširitev stopnje $n$ obsega $\mathbb{Z}_p$. Vsaka taka ra
 Edini (do izomorfizma) obseg moči $n^p$ je \textbf{Galoisov obseg} $\text{GF}(p^n)$.
 
 Naj bo $K$ končen kolobar (ne nujno komutativen). Če $K$ nima deliteljev niča, je $|K| = p^n$ in $K \cong \text{GL}(n^p)$.
+
+\section*{Topologija}
+
+Naj bo $X$ poljubna množica. Topologija na $X$ je podana z družino odprtih množic $\tau$, ki je zaprta za \textbf{poljubne unije} in \textbf{končne preseke}.
+
+Prazna unija je prazna množica, prazen presek pa cela množica.
+
+Najmanjša možna topologija je $\tau = \{\emptyset, X\}$ \textbf{trivialna}.
+
+Največja možna topologija je $\tau = P(X)$ \textbf{diskretna}.
+
+\subsubsection*{Topologija glede na metriko}
+$d: X \times X \to [0,\infty)$ je metrika, če velja:
+\begin{itemize}
+	\item $d(x, y) = 0 \iff x = y$
+	\item $d(x, y) = d(y, x)$
+	\item $d(x, y) + d(y, z) \geq d(x, z)$
+\end{itemize}
+Topologija iz metrike na $X$ je:
+\[ \tau_d = \{ U \subseteq X\ |\ U \text{ odprta glede na } d\}\]
+
+$A$ je \textbf{odprta množica}, če so vse točke notranje ($\forall a \in A\ \exists \varepsilon > 0:\ K(a, \varepsilon) \subseteq A$).
+
+$A$ je \textbf{zaprta množica} $\iff$ $A^{\complement}$ odprta $\iff$ vsebuje vse svoje robne točke. 
+
+Naj bo $A \subseteq X$.
+\begin{itemize}
+	\item \textbf{Notranjost} $\text{Int}(A) = \mathring{A}$ = največja odprta množica vsebovana v $A$.
+	\item \textbf{Zaprtje} $\text{Cl}(A) = \bar{A}$ = najmanjša zaprta množica, ki še vsebuje v $A$ \\
+			= presek vseh zaprtih množic, ki vsebujejo $A$
+	\item  \textbf{Rob} $\text{Fr}(A) = \partial A = \dot{A}$ = $\text{Cl}(A) - \text{Int}(A)$
+\end{itemize}
+
+\subsubsection*{Metrizabilnost}
+$(X, \tau)$ je metrizabilen, če obstaja metrika $d$ na $X$, da $\tau = \tau_d$
+
+\subsection*{Zveznost}
+Funkcija $f: (X, \tau_X) \to (Y, \tau_Y)$ je zvezna, če
+\begin{multline*}
+	\forall x \in X\ \forall \varepsilon > 0\ \forall \delta > 0\ \forall x' \in X:\\ d(x,x') < \delta \implies d(f(x),f(x')) < \varepsilon
+\end{multline*}
+Ekvivalentna topološka definicija:
+\[\forall V \in \tau_Y : f^{-1}(V) \in \tau_X\]
+\emph{Funkcija je zvezva, če je praslika vsake odprte množice odprta.}
+
+Naslednje trditve so ekvivalentne:
+\begin{itemize}
+	\item $f: X \to Y$ je zvezna
+	\item $\forall A^{\text{odp}} \subseteq Y:\ f^{-1}(A) \text{ odprta v }X$
+	\item $\forall B^{\text{zap}} \subseteq Y:\ f^{-1}(B) \text{ zaprta v }X$
+	\item $\forall A \subseteq X:\ f(\bar{A}) \subseteq \overline{f(A)}$
+\end{itemize}
