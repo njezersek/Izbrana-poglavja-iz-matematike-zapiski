@@ -281,7 +281,6 @@ Vsak par Gaussovih celih števil $z, w \in \mathbb{Z}[i]$  lahko zapišemo kot
 \[z = kw + r \]
 Kjer je $N(z) > N(w)$ in $N(r) < N(w)$
 
-\pagebreak
 \section*{Obsegi}
 Obseg je \emph{komutativen} kkolobar v katerem so vsi neničelni elementi \emph{obrnljivi}.
 
@@ -411,3 +410,67 @@ Naslednje trditve so ekvivalentne:
 	\item $\forall B^{\text{zap}} \subseteq Y:\ f^{-1}(B) \text{ zaprta v }X$
 	\item $\forall A \subseteq X:\ f(\bar{A}) \subseteq \overline{f(A)}$
 \end{itemize}
+
+\section*{Homeomorfizmi}
+$f: (X, \tau_X) \to (Y, \tau_Y)$ je \textbf{homeomorfizem}, če je $f$ bijekcija in sta $f$ in $f^{-1}$ zvezni.
+
+Prostora $(X, \tau_X)$ in $(Y, \tau_Y)$ sta \textbf{homeomorfna}. Oznaka $X \approx Y$.
+
+$f: X \to Y$ je \textbf{odprta}, če je slika vsake odprte množice odprta. 
+
+$f: X \to Y$ je \textbf{zaprta}, če je slika vsake zaprte množice zaprta. 
+
+Naslednje trditve so ekvivalentne:
+\begin{itemize}
+	\item $f: X \to Y$ je homeomorfizem
+	\item $f$ je zvezna bijekcija in $f^{-1}$ je zvezna
+	\item $f$ je zvezna in odprta bijekcija
+	\item $f$ je zvezna in zaprta bijekcija
+\end{itemize}
+
+\section*{Kompaktnost}
+\textbf{Odprto pokritje} množice $X$ je vsaka družina (odprtih množic) $\mathcal{U} \subseteq \tau$, katere unija je cel $X$.
+
+Prostor $X$ je \textbf{kompakten}, če v vsakem odprtem pokritju $X$ obstaja končno podpokritje.
+
+\begin{itemize}
+	\item Vsaka končna množica je kompaktna.
+	\item V metričnem prostoru je vsaka kompaktna množica omejena.
+\end{itemize}
+
+\[ A^{\text{zap}} \subseteq X^{\text{kompakten}} \implies A \text{ kompakten} \]
+
+\emph{Heine-Borel-Lebesgue:}
+\[ A \subseteq \mathbb{R}^n \text{ je kompakten } \iff A \text{ zaprt in omejen} \]
+
+V kompaktnem prostoru ima vsaka neskončna množica vsaj eno stekališče.
+
+\emph{Bolzano-Weierstrass:}\\
+Vsako omejeno zaporedje v $\mathbb{R}^n$ ima konvergentno podzaporedje.
+
+Zvezna slika kompakta je kompakt.\\
+$f: X \to Y$ zvezna, $A^\text{kompkt} \subseteq X$ $\implies$ $f(A)$ kompakt
+
+$X$ kompakten $\iff$ v vsaki družini zap. podmnožic $X$, ki ima prazen presek, obstaja končna podmnožica, ki ima prazen presek.
+
+\section*{Povezanost}
+\textbf{Separacija} množice $X$ je razdelitev $X = A \amalg B$ na deve disjunktni, neprazni, odprti podmnožici.
+
+Prostor, ki ima separacijo je \textbf{nepovezan}, sicer pa je \textbf{povezan}.
+
+Alternativna definicija:
+\begin{itemize}
+	\item $X$ je povezan, če ga ni mogoče razdeliti na dve disjunktni neprazni množici
+	\item $X$ je povezan, če sta njegovi edini podmnožici, ki sta zaprti in odprti hkrati, $\emptyset$ in $X$.
+\end{itemize}
+
+Povezane množice v $\mathbb{R}$ so natanko intervali.
+
+Zvezna funkcije ohranjajo povezanost.\\
+$f: X \to Y$ zvezna, $X$ povezana $\implies$ $f(X)$ povezana
+
+$X$ je \textbf{povezan s potmi}, če za polubna $a,b \in X$ obstaja \textbf{pot} $p: [0,1] \to X$, zvezna, $p(0) = a$, $p(1) = b$.
+
+$X$ povezan s potmi $\implies$ $X$ povezan
+
+Če je $L$ povezan in je $L \subseteq M \subseteq \bar{L}$, je tudi $M$ povezan.
