@@ -301,6 +301,8 @@ $F$ je avtomatično tudi vektorski prostor nad $K$ dimenzije $\dim_K(F) = [F:K]$
 \end{itemize}
 
 \subsubsection*{Enostavne razširitve obsegov}
+\emph{Razširitev je enostavna, če je generirana z enim samim elementom.}
+
 Naj bo $K \leq F$ in $a \in F$. Oglejmo si homomorfizem
 \begin{align*}
 	f_a: K[x] &\to F \\
@@ -351,13 +353,107 @@ Naj bo $K \leq F$ in $A \subseteq F$ množica števil, ki so algebraična nad $K
 Naj bo $K \leq F \leq E$, $F$ algebraična nad $K$, $E$ algebraična nad $F$. Potem je $E$ algebraična nad $K$.
 
 \subsection*{Razpadni obseg polinoma}
-Razpadni obseg polinoma $p(x)$ nad obsegom $K$ označimo z $K(p(x))$. To je najmanjši podobseg $K$ v katerem je $p(x)$ povsem razcepen.
+Razpadni obseg polinoma $p(x)$ nad obsegom $K$ označimo z $K(p(x))$. To je najmanjši podobseg $K$ v katerem je $p(x)$ povsem razcepen (\emph{$K$ vsebuje vse ničle $p(x)$}).
 
 Za vsak $n$ obstaja razširitev stopnje $n$ obsega $\mathbb{Z}_p$. Vsaka taka razširitev je izomorfna $\mathbb{Z}_p (x^{p^n} - x)$.
 
 Edini (do izomorfizma) obseg moči $n^p$ je \textbf{Galoisov obseg} $\text{GF}(p^n)$.
 
 Naj bo $K$ končen kolobar (ne nujno komutativen). Če $K$ nima deliteljev niča, je $|K| = p^n$ in $K \cong \text{GL}(n^p)$.
+
+\subsubsection*{Galoisovi obsegi}
+\[\text{GF}(p) \cong \mathbb{Z}_p \qquad p \in \mathbb{P}\]
+\[ \text{GF}(p^n) \cong \mathbb{Z}_p[x]/(u) \]
+\begin{itemize}
+	\item $u \in \mathbb{Z}_p[x]$ je nerazcepen polinom stopnje $n$
+	\item elementi $\text{GF}(p^n)$ so ostanki polinomov iz $\mathbb{Z}_p$ pri deljenju z polinomom $u$
+	\item seštevanje je enako kot seštevanje v $\mathbb{Z}_p[x]$
+	\item produkt izračunamo v $\mathbb{Z}_p[x]$ nato pa vzamemo ostanek pri deljenju z $u$
+\end{itemize}
+
+Množica neničelnih/obrnljivih elementov $(GF(p^n)^*, \cdot) \cong (\mathbb{Z}_{p^n-1}, \cdot)$ je vedno izomorfna neki ciklični grupi.
+Generatorjem te grupe rečemo \textbf{primitivni elementi} Galoisovega obsega.
+
+\subsection*{Ciklotomski obseg}
+je oblike $\mathbb{Q}(e^{\frac{2 \pi i}{n}})$ kjer je $n \in \mathbb{N}$.
+
+\[ [\mathbb{Q}(e^{\frac{2 \pi i}{n}}) : \mathbb{Q}] = \varphi(n) \]
+
+$\varphi$ je Eulerjeva funkcija.
+
+\subsection*{Konstruktibilna števila}
+Število $a \in \mathbb{R}$ je konstruktibilno $\iff$
+\[a \in F_n \qquad \mathbb{Q} = F_0 \leq \dots \leq F_n\]
+kjer je $[F_j : F_{j-1}] = 2$ za $\forall j = 1, \dots, n$.
+
+\emph{Število je konstruktibilno, če leži v zaporedju razširitev stopnje 2.}
+
+\subsection*{Kvaternioni}
+\[ \mathbb{H} = \{t+xi+yj+zk\ |\ t,x,y,z \in \mathbb{R}\}\]
+Kvaternioni so nekomutativen kolobar z deljenjem.
+\begin{center}
+	\renewcommand{\arraystretch}{1.5}
+	\begin{tabular}{c | c c c c}
+		$\cdot$ & $1$ & $i $ & $j $ & $k $ \\ \hline
+		$1$ & $1$ & $i $ & $j $ & $k $ \\
+		$i$ & $i$ & $-1$ & $k $ & $-j$ \\
+		$j$ & $j$ & $-k$ & $-1$ & $i $ \\
+		$k$ & $k$ & $j $ & $-i$ & $-1$ \\
+	\end{tabular}
+\end{center}
+\emph{Prvi operand je na začetku vrstice, drugi pa na vrhu stolpca.}
+
+\subsubsection*{Vektorska oblika}
+\[ q = t+xi+yj+zk = (t, \vect{r}) \qquad \vect{r} = (x,y,z)\]
+
+Vektorje $\vect{x} = (x_1, x_2, x_3) \in \mathbb{R}^3$ identificiramo s kvaternioni $(0, \vect{x})$, ki imajo skalarni del enak 0. 
+
+Množenje izrazimo s formulo:
+\[ q_1 q_2 = (t_1 t_2 - \vect{r_1}\cdot \vect{r_2},\ t_1 \vect{r_2} + t_2 \vect{r_1} + \vect{r_1} \times \vect{r_2})\]
+\begin{align*}
+	\vect{a} \times \vect{b} = \begin{vmatrix}
+		\mathbf{i} & \mathbf{j} & \mathbf{k} \\
+		a_1 & a_2 & a_3 \\
+		b_1 & b_2 & b_3 \\
+	\end{vmatrix}
+\end{align*}
+
+Konjugirani kvaternion:
+\[ q^* = (t, -\vect{r})\]
+
+Norma kvaterniona:
+\[ |q|^2 = q q^* = t^2+x^2+y^2+z^2 = t^2+\|\vect{r}\|^2\]
+
+Inverz kvaterniona:
+\[ q^{-1} = \frac{q^*}{|q|^2}\]
+
+\subsubsection*{Vrtenje vektorjev}
+Vektor $\vect{x} \in \mathbb{R}^3$ bomo zavrteli okoli osi $\vect{e} \in \mathbb{R}^3$, $|\vect{e}| = 1$ za kot $\varphi \in \mathbb{R}$.
+
+Enotski kvaternioni tvorijo grupo:
+\[s^3 = \{(t, \vect{r}) \in \mathbb{H}\ |\ t^2 + \| \vect{r}\|^2 = 1\}\]
+
+Definirajmo enotski kvaternion:
+\[ q = \cos\frac{\varphi}{2} + \sin\frac{\varphi}{2} \vect{e} \]
+
+Zavrten vektor je potem:
+\[ R(\vect{e}, \varphi) \vect{x} = q \vect{x} q^*\]
+
+
+Rotacijske matrike so ortogonalne matrike z determinanto 1 in tvorijo grupo:
+\[SO(3) = \{ R \in \mathbb{R}^{3\times 3}\ |\ R^TR = I, \det(R) = 1\}\]
+
+Iz rotacijske matrike $R$ lahko izračunamo os rotacije:
+
+Os vrtenja je vzporedna lastnemu vektorju $\vect{e}$ matrike $R$, ki ustreza lastni vrednosti $\lambda = 1$.
+Za $\varphi \notin \{0, \pi\}$:
+\[\vect{e} = \frac{1}{2 \sin \varphi} \begin{bmatrix}
+	R_{32}-R_{23} \\
+	R_{13}-R_{31} \\
+	R_{21}-R_{12} \\
+\end{bmatrix}\]
+
+Kot rotacije pa dobimo s formulo $\cos \varphi = \frac{\text{sl}(R) - 1}{2}$
 
 \section*{Topologija}
 
